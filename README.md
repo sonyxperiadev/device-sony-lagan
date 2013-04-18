@@ -8,7 +8,7 @@ To setup a tree and build images for the device do the following:
 repo init as described by Google over at:
 http://source.android.com/source/downloading.html
 
-Put the following snippet in .repo/local_manifest.xml
+Put the following snippet in .repo/local_manifests/c6603.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -24,8 +24,8 @@ Put the following snippet in .repo/local_manifest.xml
 <remove-project name="platform/hardware/qcom/sensors" />
 <remove-project name="platform/hardware/invensense" />
 
-<project path="device/sony/lagan" name="device-sony-lagan" groups="device" revision="master" />
-<project path="device/sony/c6603" name="device-sony-c6603" groups="device" revision="master" />
+<project path="device/sony/lagan" name="device-sony-lagan" groups="device" remote="sony" revision="master" />
+<project path="device/sony/c6603" name="device-sony-c6603" groups="device" remote="sony" revision="master" />
 </manifest>
 ```
 

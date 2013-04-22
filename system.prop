@@ -1,9 +1,13 @@
+af.resampler.quality=255
 debug.composition.type=dyn
 debug.egl.hw=1
 debug.enable.wl_log=1
 debug.mdpcomp.logs=0
 debug.sf.hw=1
 dev.pm.dyn_samplingrate=1
+persist.audio.fluence.mode=endfire
+persist.audio.handset.mic=analog
+persist.audio.lowlatency.rec=false
 persist.hwc.mdpcomp.enable=true
 rild.libargs=-d /dev/smd0
 rild.libpath=/system/lib/libril-qc-qmi-1.so

@@ -21,4 +21,3 @@ ro.hwui.text_small_cache_width=2048
 ro.hwui.texture_cache_size=128.0f
 ro.opengles.version=131072
 wifi.interface=wlan0
-wifi.supplicant_scan_interval=15

@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libloc_adapter \
     libloc_eng \
+    sensors.default
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 

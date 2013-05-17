@@ -23,6 +23,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.bt.hci_transport=smd \
+
 SONY_ROOT = device/sony/lagan/rootdir
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.sony:root/fstab.sony \
@@ -31,6 +34,7 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/apns-conf.xml:system/etc/apns-conf.xml \
     $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf \
+    $(SONY_ROOT)/system/etc/init.sony.bt.sh:system/etc/init.sony.bt.sh \
     $(SONY_ROOT)/system/etc/media_codecs.xml:system/etc/media_codecs.xml \
     $(SONY_ROOT)/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
     $(SONY_ROOT)/system/etc/nfcee_access.xml:system/etc/nfcee_access.xml \

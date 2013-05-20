@@ -23,9 +23,10 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
+ifneq ($(filter c6603 c6503 c5503 sgp321 sgp311,$(TARGET_DEVICE)),)
+
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(TARGET_PRODUCT),full_c6802)
 include $(CLEAR_VARS)
 LOCAL_MODULE       := wpa_supplicant.conf
 LOCAL_MODULE_TAGS  := optional
@@ -42,5 +43,6 @@ LOCAL_SRC_FILES    := $(LOCAL_MODULE)
 LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/wifi
 include $(BUILD_PREBUILT)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
 endif
+
+include $(call all-makefiles-under,$(LOCAL_PATH))

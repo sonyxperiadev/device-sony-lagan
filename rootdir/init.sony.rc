@@ -243,6 +243,16 @@ on post-fs-data
 
     mkdir /data/camera 0771 root camera
 
+    chown media system /sys/bus/i2c/devices/0-0053/torch_enable
+    chown media system /sys/bus/i2c/devices/0-0053/torch_current
+    chown media system /sys/bus/i2c/devices/0-0053/privacy_enable
+    chown media system /sys/bus/i2c/devices/0-0053/privacy_current
+    chown media system /sys/bus/i2c/devices/0-0053/flash_enable
+    chown media system /sys/bus/i2c/devices/0-0053/flash_duration
+    chown media system /sys/bus/i2c/devices/0-0053/flash_synchronization
+    chown media system /sys/bus/i2c/devices/0-0053/flash_current
+    chown media system /sys/bus/i2c/devices/0-0053/status
+
 on property:init.svc.wpa_supplicant=stopped
     stop dhcpcd
 

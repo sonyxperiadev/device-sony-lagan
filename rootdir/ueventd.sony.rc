@@ -68,6 +68,9 @@
 /dev/uinput               0660   system     bluetooth
 /dev/v4l-subdev*          0660   system     camera
 /dev/video*               0660   system     camera
+/sys/devices/virtual/graphics/fb1   edid_modes          0440 system system
+/sys/devices/virtual/graphics/fb1   product_description 0640 system system
+/sys/devices/virtual/graphics/fb1   vendor_name         0640 system system
 /sys/devices/virtual/input/input*   bma250_calib_eeprom 0220 system system
 /sys/devices/virtual/input/input*   bma250_calib_image  0660 system system
 /sys/devices/virtual/input/input*   bma250_calib_offset 0440 system system

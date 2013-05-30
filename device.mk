@@ -19,7 +19,8 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     libloc_adapter \
     libloc_eng \
-    sensors.default
+    sensors.default \
+    lights.sony
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 

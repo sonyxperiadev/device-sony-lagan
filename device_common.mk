@@ -60,7 +60,6 @@ PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/fstab.sony:root/fstab.sony \
     $(SONY_ROOT)/init.sony.rc:root/init.sony.rc \
     $(SONY_ROOT)/init.sony.usb.rc:root/init.sony.usb.rc \
-    $(SONY_ROOT)/system/etc/apns-conf.xml:system/etc/apns-conf.xml \
     $(SONY_ROOT)/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
     $(SONY_ROOT)/system/etc/gps.conf:system/etc/gps.conf \
     $(SONY_ROOT)/system/etc/init.sony.bt.sh:system/etc/init.sony.bt.sh \
@@ -97,4 +96,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.google.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:system/etc/permissions/com.nxp.mifare.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+
+# Get the long list of apns
+PRODUCT_COPY_FILES += device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
 

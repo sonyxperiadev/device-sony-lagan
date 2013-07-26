@@ -5,3 +5,5 @@
 /dev/block/platform/msm_sdcc.1/by-name/system       /system         ext4    ro,barrier=1                                                    wait
 /dev/block/platform/msm_sdcc.1/by-name/cache        /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check
 /dev/block/platform/msm_sdcc.1/by-name/userdata     /data           ext4    noatime,nosuid,nodev,barrier=1,data=ordered,noauto_da_alloc     wait,check,encryptable=/dev/block/platform/msm_sdcc.1/by-name/metadata
+/devices/platform/msm_sdcc.3/mmc_host               /storage/sdcard1 vfat   nosuid,nodev                                                    voldmanaged=sdcard:auto
+/devices/platform/msm_hsusb_host                    /storage/usbdisk vfat   nosuid,nodev                                                    voldmanaged=usbdisk:auto

@@ -38,8 +38,6 @@
     <ctl name="DEC9 Volume" value="84" />
     <ctl name="DEC10 Volume" value="84" />
     <ctl name="MICBIAS1 CAPLESS Switch" value="1" />
-    <ctl name="MICBIAS2 CAPLESS Switch" value="0" />
-    <ctl name="MICBIAS3 CAPLESS Switch" value="0" />
     <ctl name="SLIMBUS_3_RX Port Mixer INTERNAL_BT_SCO_RX" value="0" />
     <ctl name="HDMI_RX Port Mixer SLIM_3_TX" value="0" />
     <ctl name="INTERNAL_BT_SCO_RX Port Mixer SLIM_1_TX" value="0" />

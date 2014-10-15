@@ -22,19 +22,16 @@
 /dev/msm_camera/*         0660   system     camera
 /dev/msm_dsps             0600   system     system
 /dev/msm_rotator          0664   system     system
-/dev/msm_rotator          0664   system     system
 /dev/msm_rtac             0660   system     audio
 /dev/msm_vidc_dec         0660   system     audio
-/dev/msm_vidc_dec         0660   system     audio
 /dev/msm_vidc_dec_sec     0660   system     audio
-/dev/msm_vidc_dec_sec     0660   system     audio
-/dev/msm_vidc_enc         0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_vidc_reg         0660   system     audio
 /dev/msm_vpe_standalone   0660   system     camera
 /dev/pn544                0600   nfc        nfc
 /dev/qseecom              0666   system     drmrpc
 /dev/rfcomm0              0660   bluetooth  bluetooth
+/dev/rfkill               0660   wifi       wifi
 /dev/rmnet_mux_ctrl       0640   radio      radio
 /dev/rtc0                 0600   system     system
 /dev/sdioctl0             0640   radio      radio
@@ -75,11 +72,34 @@
 /sys/devices/virtual/input/input*   bma250_calib_image  0660 system system
 /sys/devices/virtual/input/input*   bma250_calib_offset 0440 system system
 /sys/devices/virtual/input/input*   bma250_calib_set    0220 system system
-/sys/devices/virtual/input/input*   bma250_rate 0640  system   system
-/sys/devices/virtual/input/input*   interval    0640  system   system
-/sys/devices/virtual/input/input*   registers   0640  system   system
-/sys/devices/virtual/input/input*   single      0640  system   system
+/sys/devices/virtual/input/input*   bma250_rate         0640 system system
+/sys/devices/virtual/input/input*   bma250_delay        0640 system system
+/sys/devices/virtual/input/input*   bma250_range        0640 system system
+/sys/devices/virtual/input/input*   bma250_resolution   0640 system system
+/sys/devices/virtual/input/input*   interval            0660 system system
+/sys/devices/virtual/input/input*   registers           0640 system system
+/sys/devices/virtual/input/input*   single              0660 system system
 
-# LM3533 ALS
-/sys/devices/i2c-0/0-0036 als_enable 0600 system system
-/sys/devices/i2c-0/0-0036 als_result 0400 system system
+# LM3533
+/sys/devices/i2c-0/0-0036 als_enable 0660 system system
+/sys/devices/i2c-0/0-0036 als_result 0440 system system
+/sys/devices/i2c-0/0-0036 sync_lvbanks 0660 system system
+/sys/devices/i2c-0/0-0036/leds/lm3533* brightness 0660 system system
+/sys/devices/i2c-0/0-0036/leds/lm3533* pattern 0660 system system
+/sys/devices/i2c-0/0-0036/leds/lm3533* max_brightness 0640 system system
+/sys/devices/i2c-0/0-002c/backlight/lcd-backlight brightness 0660 system system
+/sys/devices/i2c-0/0-002c/backlight/lcd-backlight max_brightness 0640 system system
+
+# APDS9702
+/sys/devices/i2c-2/2-0054 threshold 0660 system system
+
+#GPS
+/dev/gss                  0660   gps        gps
+
+# IR Remote
+/dev/ttyHSL2 0660 system system /sys/devices/platform/ir_remote_control enable 0220 system system
+
+#KS permisisons
+/sys/devices/virtual/smdpkt/smdcntl* open_timeout 0664 radio radio
+/dev/ks_hsic_bridge 0660 system system
+/dev/efs_hsic_bridge 0660 system system

@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The Android Open Source Project
+# Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include common and then apply bare minimum to use modem. This is necessary
-# since there is no support in AOSP for a tablet which needs ril for connectivity.
-#
 $(call inherit-product, device/sony/lagan/device_common.mk)
 
 # We are tablet
@@ -37,4 +34,3 @@ PRODUCT_PACKAGES += rild
 # Carry on
 #
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product-if-exists, vendor/google/products/gms.mk)

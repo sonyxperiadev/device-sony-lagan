@@ -1,3 +1,18 @@
+# Copyright 2014 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+PRODUCT_VENDOR_KERNEL_HEADERS := device/sony/lagan/kernel-headers
 
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -9,28 +24,35 @@ TARGET_CPU_SMP := true
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_NO_RADIOIMAGE := true
-TARGET_NO_RECOVERY := true
+TARGET_NO_RECOVERY := false
 TARGET_NO_KERNEL := false
 
+BOARD_KERNEL_BASE        := 0x80200000
+BOARD_KERNEL_PAGESIZE    := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
+BOARD_RAMDISK_OFFSET     := 0x02000000
+
 BOARD_KERNEL_BOOTIMG := true
-BOARD_KERNEL_BASE := 0x80200000
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=sony user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 vmalloc=400M
-BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+
+BOARD_KERNEL_CMDLINE := androidboot.hardware=lagan user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 vmalloc=400M
 
 USE_OPENGL_RENDERER := true
+BOARD_EGL_CFG := device/sony/lagan/rootdir/system/lib/egl/egl.cfg
+
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 BOARD_USES_GENERIC_AUDIO := false
 BOARD_USES_ALSA_AUDIO := true
-USE_PROPRIETARY_AUDIO_EXTENSIONS := false
 
-BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/lagan
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
+TARGET_USES_ION := true
+USE_DEVICE_SPECIFIC_CAMERA := true
 
-TARGET_SYSTEM_PROP := device/sony/lagan/system.prop
-
+# Wi-Fi definitions for Qualcomm solution
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_qcwcn
@@ -46,13 +68,18 @@ WIFI_DRIVER_MODULE_NAME := "wlan"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# BT definitions for Qualcomm solution
+BLUETOOTH_HCI_USE_MCT := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/sony/lagan/bluetooth
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+
+# GPS definitions for Qualcomm solution
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 TARGET_NO_RPC := true
 
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false
+TARGET_SYSTEM_PROP := device/sony/lagan/system.prop
 
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_FLASH_BLOCK_SIZE := 131072
-
-TARGET_USES_ION := true
+TARGET_RECOVERY_FSTAB := device/sony/lagan/rootdir/fstab.lagan
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_RECOVERY_UI_LIB := librecovery_ui_lagan

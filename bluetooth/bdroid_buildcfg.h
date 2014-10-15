@@ -1,5 +1,4 @@
-/*
- * Copyright (C) 2013 The Android Open Source Project
+/* Copyright 2014 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +16,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Sony AOSP"
+#define BTA_HOST_INTERLEAVE_SEARCH  TRUE
 
 #endif

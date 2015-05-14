@@ -18,9 +18,7 @@ $(call inherit-product, device/sony/lagan/device_common.mk)
 PRODUCT_CHARACTERISTICS := tablet
 
 # We need hardware
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
-    device/sony/lagan/rootdir/system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3_stereo:system/etc/snd_soc_msm/snd_soc_msm_2x_Fusion3 \
+PRODUCT_COPY_FILES += frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 # We need the ril and some properties, so copy that from full_base_telephony.mk
 # If you look at that file, you'll see that this is the order things are done.
